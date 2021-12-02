@@ -1,0 +1,48 @@
+查看所有配置和所在文件
+$ git config --list --show-origin
+设置用户名和邮件地址
+$git config --global user.name "wdm"
+$git config --global user.email wangduomi@163.com
+配置默认文本编辑器，如未配置，git使用系统默认的文本编辑器。如果使用不同的文本编辑器
+$git config --global core.editor emacs
+在Windows系统上，如果使用别的文本编辑器，必须知道可执行文件的完整路径。例
+$ git config --global core.editor "'C:/Program/Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+查询git变量的原始值，显示最后设置该值的配置文件
+$git config --show-origin rerere.autoUpdate
+file:/home/johndoe/.gitconfig false
+三种查找git命令综合手册（manpage）的方法
+$git help <verb>
+$git <verb> --help
+$man git -<verb>
+如果不需要全面手册，只需要快速参考，可以用-h选项获得更简明的“help”
+$git config -h
+进入项目目录，初始化仓库
+$git init
+如果已经进行版本控制，追踪文件并进行初始化提交。通过git add命令指定所需文件进行追踪，然后执行git commit
+$git add *.c
+$git add LICENSE
+$git commit -m 'initial project version'
+克隆现有的仓库
+$git clone https://github.com/libgit2/libgit2
+自定义本地仓库的名称
+$git clone https://github.com/libgit2/libgit2 mylibgit
+git支持多种数据传输协议，https://或者git://协议或者使用SSH传输协议如：user@server:apth/to/repo.git
+检查当前文件状态
+$git status
+新仓库设置.gitignore文件的习惯，以免将来误提交这类无用的文件。
+git diff看暂存前后的变化
+
+git diff --cached查看已经暂存起来的变化--staged和--cached是同义词
+
+跳过使用暂存区域
+git commit -a
+移除文件
+git rm
+强制删除选项-f
+只保留当前目录
+git -rm --cached
+git有自己的文件模式扩展匹配方式，所以我们不用shell来帮忙展开。
+$git rm log/\*.log
+$git rm \*.log
+git重命名git mv
+查看提交历史git log，一个比较有用的选项-p或--patch显示每次提交的差异。限制显示日志条目数，例如-2选项显示最近的两次提交。

@@ -1,0 +1,18 @@
+查看所有配置和所在文件
+$ git config --list --show-origin
+设置用户名和邮件地址
+$git config --global user.name "wdm"
+$git config --global user.email wangduomi@163.com
+配置默认文本编辑器，如未配置，git使用系统默认的文本编辑器。如果使用不同的文本编辑器
+$git config --global core.editor emacs
+在Windows系统上，如果使用别的文本编辑器，必须知道可执行文件的完整路径。例
+$ git config --global core.editor "'C:/Program/Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+查询git变量的原始值，显示最后设置该值的配置文件
+$git config --show-origin rerere.autoUpdate
+file:/home/johndoe/.gitconfig false
+三种查找git命令综合手册（manpage）的方法
+$git help <verb>
+$git <verb> --help
+$man git -<verb>
+如果不需要全面手册，只需要快速参考，可以用-h选项获得更简明的“help”
+
